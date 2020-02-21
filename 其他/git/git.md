@@ -160,22 +160,16 @@ git config --global core.quotepath false
 
 ​			 先查看当前方式 ： git remote -v 
 
-​	2.2、 移除旧的http的origin 
-
-​			 git remote rm origin 
-
-​	2.3、 添加新的ssh方式的origin 
-
-​			 git remote add origin git@github.com:yychuyu/linux-system-programming.git 
-
-​	2.4、 改动完之后直接执行git push是无法推送代码的，需要设置一下上游要跟踪的分支，与此同时会自动执行一次git push命令 
-
-​			 git push --set-upstream origin master 
-
 ~~~xml
-$ git push --set-upstream origin master
-git@github.com: Permission denied (publickey).
-fatal: Could not read from remote repository.
+$ cd ~
+$ rm -r .ssh/
+$ ssh-keygen -t rsa -C 1655669184@qq.com
+$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsYK9/BbOcGXr27tiSMNLCu/FG8VaMf5ECRup+epHPHZqnBaQxvl/jmCOXX1k5eazYwvT3hZy71N9gyBk4gAb2bEC8UXl99dVjNBQNumL6oe0NZoC6i1qnR4De3HZF+iiIqqI/me65pKBuh0Q0HwrUYcxMf4Wfq4OMsFD4I1/7I4pO74GpA+LdD8x2XhbJ46IDQlvOi7Zc08OSqkRfPb82aPime7H/p0hHB5cdlgph0SutxfVimoWu+F2G319QVKz5ukbiOfegN4G0KMh13wJpFYCCrAF/0/uKZw8jAKzTIYAq0gbdK+DigpyqZKAT8KoRa5Rmq7+MvmBApoo16w0MU1FmfwiEMgkzORD7rQIvW9pFqXGYDczZcWrQ4jRbnso3mmYP4H8sOXsxjJ6TDf1CtglAUkCzDtDvvvQTByUZM3WwXURYJVzR7oxnOy+0Mp+bYtjMK58YicSRe9GWPOfk69Cv5ws9UFLaw7X/lcwIacOXTxLk1r/xW++0UvDQrzk= 1655669184@qq.com
+
 ~~~
 
-SHA256:Agn6fHXvL6DgsmmWRtlHPKZp2wjMl3Z+UwiD1+FmOBc 1655669184@qq.com
+将该ssh key添加到github的new SSH key中
+
+![sshkey](D:%5Cagitstudy%5Cstudy%5C%E5%85%B6%E4%BB%96%5Cgit%5Cimages%5Csshkey.PNG)
+
