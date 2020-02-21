@@ -148,13 +148,15 @@ git checkout xxx		===》	切换分支
 
 # 七、问题
 
-1、git add 时有中文会乱码（[\256\346\200\273\347\273\223](https://www.cnblogs.com/EasonJim/p/8403587.html)），设置方法：
+## 1、git add 时有中文会乱码
+
+（[\256\346\200\273\347\273\223](https://www.cnblogs.com/EasonJim/p/8403587.html)），设置方法：
 
 ```git
 git config --global core.quotepath false
 ```
 
-2、push时免输账号密码
+## 2、push时免输账号密码
 
  	2.1、将http方式改为**ssh方式** 
 
@@ -172,4 +174,16 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsYK9/BbOcGXr27tiSMNLCu/FG8VaMf5ECRup+epHP
 将该ssh key添加到github的new SSH key中
 
 ![sshkey](D:%5Cagitstudy%5Cstudy%5C%E5%85%B6%E4%BB%96%5Cgit%5Cimages%5Csshkey.PNG)
+
+## 3、上面设置完成后
+
+必须输入git push origin master才能推送，如果只git push会出现
+
+The current branch master has no upstream branch
+
+解决方法：
+
+​	1、 运行 git push --set-upstream origin master 
+
+​	2、 运行git push -u origin master 
 
