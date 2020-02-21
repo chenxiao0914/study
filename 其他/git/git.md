@@ -154,6 +154,28 @@ git checkout xxx		===》	切换分支
 git config --global core.quotepath false
 ```
 
+2、push时免输账号密码
 
+ 	2.1、将http方式改为**ssh方式** 
 
- git remote rm origin 
+​			 先查看当前方式 ： git remote -v 
+
+​	2.2、 移除旧的http的origin 
+
+​			 git remote rm origin 
+
+​	2.3、 添加新的ssh方式的origin 
+
+​			 git remote add origin git@github.com:yychuyu/linux-system-programming.git 
+
+​	2.4、 改动完之后直接执行git push是无法推送代码的，需要设置一下上游要跟踪的分支，与此同时会自动执行一次git push命令 
+
+​			 git push --set-upstream origin master 
+
+~~~xml
+$ git push --set-upstream origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+~~~
+
+SHA256:Agn6fHXvL6DgsmmWRtlHPKZp2wjMl3Z+UwiD1+FmOBc 1655669184@qq.com
