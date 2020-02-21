@@ -154,3 +154,6 @@ git checkout xxx		===》	切换分支
 git config --global core.quotepath false
 ```
 
+
+
+ git remote rm origin 
