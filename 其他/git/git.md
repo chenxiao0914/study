@@ -145,3 +145,12 @@ git checkout xxx		===》	切换分支
 ==发生冲突解决方式==：
 
 ​	先拉取pull下来，查看冲突文件，修改好，按合并分支发生冲突方式合并（==修改完文件后，add后、commit时不需要加写文件名==）
+
+# 七、问题
+
+1、git add 时有中文会乱码（[\256\346\200\273\347\273\223](https://www.cnblogs.com/EasonJim/p/8403587.html)），设置方法：
+
+```git
+git config --global core.quotepath false
+```
+
