@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        .inner {
+            height: 150px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="inner" @click="innerHandle">
+            <input type="button" value = "戳他" @click.stop="btnHandle">
+        </div>
+
+        <div class="inner" @click.capture="innerHandle">
+            <input type="button" value = "戳他" @click="btnHandle">
+        </div>
+
+        <div class="inner" @click.self.once="innerHandle">
+            <input type="button" value = "戳他" @click="btnHandle">
+        </div>
+
+
+        <a href="http:www.baidu.com" @click.prevent="clickLink">aaa</a>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: ''
+        },
+        methods: {
+            innerHandle(){
+                alert("inner alert");
+            },
+            btnHandle(){
+                alert("btn alert");
+            },
+            clickLink(){
+                alert("clicklink");
+            }
+        }    
+    })
+</script>
+</html>
